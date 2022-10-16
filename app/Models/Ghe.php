@@ -13,4 +13,10 @@ class Ghe extends Model
         'maPhong',
     ];
     public $timestamps=false;
+    public function ves(){
+        return $this->hasMany(Ve::class,'maGhe','id');
+    }
+    public function  phong(){
+        return $this->belongsTo(Phong::class,'maPhong','id');
+    }
 }

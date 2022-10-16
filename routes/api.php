@@ -10,6 +10,7 @@ use App\Http\Controllers\Api\PhongController;
 use App\Http\Controllers\Api\TheLoaiPhimController;
 use App\Http\Controllers\Api\VeController;
 use App\Http\Controllers\Api\GheController;
+use App\Http\Controllers\ApiController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use  App\Http\Controllers\Api\CTLichChieuController;
@@ -39,6 +40,9 @@ Route::apiResources([
     'ct_lc' => CTLichChieuController::class,
     'ghe' => GheController::class,
     've' => VeController::class,
-
-
 ]);
+Route::post('getGheExit',[ApiController::class,'getGheExit']);
+Route::get('storeTicket',[ApiController::class,'storeTicket']);
+Route::post('getPhimClient',[ApiController::class,'getPhimClient']);
+Route::post('getTicket',[ApiController::class,'getTicket']);
+

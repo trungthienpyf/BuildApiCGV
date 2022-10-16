@@ -9,10 +9,11 @@ class Phong extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'tenAdmin',
-        'taiKhoan',
-        'matKhau',
-        'chucVu',
+        'tenPhong',
+
     ];
     public $timestamps=false;
+    public  function lichchieus(){
+        return $this->hasMany(LichChieu::class,'maPhong','id');
+    }
 }

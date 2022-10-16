@@ -15,4 +15,7 @@ class HoaDon extends Model
 
     ];
     public $timestamps=false;
+    public  function ves(){
+        return $this->hasMany(Ve::class,'maHoaDon','id');
+    }
 }

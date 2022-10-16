@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\LichChieu;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class LichChieuController extends Controller
 {
@@ -27,8 +28,9 @@ class LichChieuController extends Controller
      */
     public function store(Request $request)
     {
-        LichChieu::create($request->all());
-        return response()->json(["status"=>200],200);
+
+            LichChieu::create($request->all());
+            return response()->json(["status"=>200],200);
     }
 
     /**

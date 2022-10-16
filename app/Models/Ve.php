@@ -15,6 +15,13 @@ class Ve extends Model
         'maLichChieu',
         'maHoaDon',
         'maGhe',
+        'ngayXem',
     ];
     public $timestamps=false;
+    public  function  lichchieu(){
+        return $this->belongsTo(LichChieu::class,'maLichChieu','id');
+    }
+    public  function  ghe(){
+        return $this->hasMany(Ghe::class,'id');
+    }
 }

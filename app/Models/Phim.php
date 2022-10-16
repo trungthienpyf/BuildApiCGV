@@ -13,6 +13,13 @@ class Phim extends Model
         'moTa',
         'thoiGian',
         'maTheLoai',
+        'img',
     ];
+
+    public function lichChieus(){
+
+        return $this->belongsToMany(LichChieu::class, 'c_t__l_c_s', 'maPhim', 'maLichChieu');
+
+    }
     public $timestamps=false;
 }

@@ -9,7 +9,7 @@ class TheLoaiPhim extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'tenPhong',
+        'tenTheLoai',
     ];
     public $timestamps=false;
 }
