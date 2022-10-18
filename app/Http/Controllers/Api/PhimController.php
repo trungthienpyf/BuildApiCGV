@@ -27,13 +27,19 @@ class PhimController extends Controller
      */
     public function store(Request $request)
     {
-        if ($request->hasFile('img')) {
+        if ($request->hasFile('imgz')) {
             // Nếu không thì in ra thông báo
-            $image = $request->file('img');
-            $storedPath = $image->move('images', $image->getClientOriginalName());
+            $image = $request->file('imgz');
+          $image->move('images', $image->getClientOriginalName());
+            $path=  $image->getClientOriginalName();
+
         }
 
-        $request->merge(['img' => $storedPath]);
+
+
+
+    $request->merge(['img'=>$path]);
+
             Phim::create($request->all());
             return response()->json(["status"=>200],200);
 
